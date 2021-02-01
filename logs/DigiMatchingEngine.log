@@ -326,3 +326,727 @@ FXOrder{ clOrdId='SK-SELL00-1089244339107099', orderId=1, fxSymbol=FXSymbol{name
 2021-02-01 15:30:52,603 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] List of Bids on price 20000.0, [] 
 2021-02-01 15:30:52,604 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1089244388961300 is Removed from matching book? true
 2021-02-01 15:30:52,604 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 15:43:28,571 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1090000368417500, side SELL, px 20000.0, qty 10.0
+2021-02-01 15:43:28,577 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1090000368417500, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 15:43:28,582 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1090000403160600, side BUY, px 20000.0, qty 10.0
+2021-02-01 15:43:28,583 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1090000403160600, side BUY, price 20000.0, qty 10.0, order id 2 
+2021-02-01 15:43:28,583 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 15:43:28,586 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1090000368417500, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 15:43:28,587 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 15:43:28,587 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 15:43:28,589 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 15:43:28,590 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1090000403160600, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 15:43:28,591 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1090000403160600, 10.0
+2021-02-01 15:43:28,593 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1090000403160600, 10.0
+2021-02-01 15:43:28,595 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1090000403160600, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1090000368417500', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 15:43:28,597 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1090000403160600 with opposite side SELL and clOrdId SK-SELL00-1090000368417500
+2021-02-01 15:43:28,599 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1090000403160600 with opposite side SELL and clOrdId SK-SELL00-1090000368417500
+2021-02-01 15:43:28,599 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 15:43:28,601 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1090000403160600 leavesQty is 10.0 
+2021-02-01 15:43:28,602 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-BUY00-1090000403160600 
+2021-02-01 15:43:28,603 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-BUY00-1090000403160600 
+2021-02-01 15:43:28,604 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 15:43:28,605 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 15:43:28,605 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1090000368417500 leavesQty is 10.0 
+2021-02-01 15:43:28,606 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-SELL00-1090000368417500 
+2021-02-01 15:43:28,606 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-SELL00-1090000368417500 
+2021-02-01 15:43:28,607 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 15:43:28,608 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-SELL00-1090000368417500 is removed from matching book as bestOppositeOrder? true
+2021-02-01 15:43:28,609 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] List of Bids on price 20000.0, [] 
+2021-02-01 15:43:28,610 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1090000403160600 is Removed from matching book? true
+2021-02-01 15:43:28,610 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:22:51,004 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092362817131700, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:22:51,009 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092362817131700, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:22:51,013 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092362834661800, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:22:51,015 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092362834661800, side BUY, price 20000.0, qty 10.0, order id 2 
+2021-02-01 16:22:51,015 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:51,018 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1092362817131700, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:22:51,020 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:22:51,020 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:22:51,022 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:51,022 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1092362834661800, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:22:51,023 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1092362834661800, 10.0
+2021-02-01 16:22:51,025 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1092362834661800, 10.0
+2021-02-01 16:22:51,026 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1092362834661800, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1092362817131700', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:22:51,028 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1092362834661800 with opposite side SELL and clOrdId SK-SELL00-1092362817131700
+2021-02-01 16:22:51,030 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1092362834661800 with opposite side SELL and clOrdId SK-SELL00-1092362817131700
+2021-02-01 16:22:51,031 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:22:51,032 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1092362834661800 leavesQty is 10.0 
+2021-02-01 16:22:51,033 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-BUY00-1092362834661800 
+2021-02-01 16:22:51,034 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-BUY00-1092362834661800 
+2021-02-01 16:22:51,035 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:22:51,035 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:22:51,036 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1092362817131700 leavesQty is 10.0 
+2021-02-01 16:22:51,036 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-SELL00-1092362817131700 
+2021-02-01 16:22:51,037 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-SELL00-1092362817131700 
+2021-02-01 16:22:51,037 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:22:51,039 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-SELL00-1092362817131700 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:22:51,040 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] List of Bids on price 20000.0, [] 
+2021-02-01 16:22:51,042 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1092362834661800 is Removed from matching book? true
+2021-02-01 16:22:51,043 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:22:59,874 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092371682154699, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:22:59,883 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092371682154699, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:22:59,887 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092371708652000, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:22:59,909 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092371708652000, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:22:59,893 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:59,911 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1092371682154699, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:22:59,912 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:22:59,913 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:22:59,915 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:59,916 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1092371708652000, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:22:59,917 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1092371708652000, 10.0
+2021-02-01 16:22:59,918 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1092371708652000, 10.0
+2021-02-01 16:22:59,920 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:22:59,921 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:22:59,971 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092371682154699, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:22:59,972 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092371682154699, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:22:59,973 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092371794127699, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:22:59,973 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092371794127699, side SELL, price 20000.0, qty 10.0, order id 4 
+2021-02-01 16:22:59,973 ERROR c.d.m.e.FXOrderBook [pool-2-thread-3] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-SELL00-1092371682154699', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:22:59,974 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092371708652000, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:22:59,974 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:59,975 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092371708652000, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:22:59,975 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1092371682154699, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:22:59,976 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092371797312000, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:22:59,976 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] before loop SK-SELL00-1092371682154699, 10.0
+2021-02-01 16:22:59,977 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092371797312000, side BUY, price 20000.0, qty 10.0, order id 6 
+2021-02-01 16:22:59,977 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] inside loop --- SK-SELL00-1092371682154699, 10.0
+2021-02-01 16:22:59,978 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Price can't Match as Ask/SELL price 20000.0 is higher than best opposite price 19000.0
+2021-02-01 16:22:59,979 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:22:59,980 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:59,980 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1092371794127699, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:22:59,982 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] before loop SK-SELL00-1092371794127699, 10.0
+2021-02-01 16:22:59,982 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] inside loop --- SK-SELL00-1092371794127699, 10.0
+2021-02-01 16:22:59,983 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Price can't Match as Ask/SELL price 20000.0 is higher than best opposite price 19000.0
+2021-02-01 16:22:59,984 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:22:59,984 ERROR c.d.m.e.FXOrderBook [pool-2-thread-5] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-BUY00-1092371708652000', orderId=2, fxSymbol=FXSymbol{name='BTC/USD'}, side=BUY, orderType=LIMIT, ordPx=19000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:22:59,985 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:59,986 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-BUY00-1092371708652000, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:22:59,986 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] before loop SK-BUY00-1092371708652000, 10.0
+2021-02-01 16:22:59,986 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] inside loop --- SK-BUY00-1092371708652000, 10.0
+2021-02-01 16:22:59,987 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:22:59,987 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:22:59,988 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:22:59,988 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1092371797312000, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:22:59,989 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] before loop SK-BUY00-1092371797312000, 10.0
+2021-02-01 16:22:59,989 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] inside loop --- SK-BUY00-1092371797312000, 10.0
+2021-02-01 16:22:59,991 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] --- clOrdId SK-BUY00-1092371797312000, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1092371682154699', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}, 
+FXOrder{ clOrdId='SK-SELL00-1092371794127699', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:22:59,992 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1092371797312000 with opposite side SELL and clOrdId SK-SELL00-1092371682154699
+2021-02-01 16:22:59,994 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1092371797312000 with opposite side SELL and clOrdId SK-SELL00-1092371682154699
+2021-02-01 16:22:59,995 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] acquired order lock 
+2021-02-01 16:22:59,995 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1092371797312000 leavesQty is 10.0 
+2021-02-01 16:22:59,996 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] Before leaves qty 10.0, clOrdId SK-BUY00-1092371797312000 
+2021-02-01 16:22:59,997 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] After leaves qty 0.0, clOrdId SK-BUY00-1092371797312000 
+2021-02-01 16:22:59,998 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] unlocking order lock 
+2021-02-01 16:22:59,999 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] acquired order lock 
+2021-02-01 16:22:59,999 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1092371682154699 leavesQty is 10.0 
+2021-02-01 16:23:00,000 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] Before leaves qty 10.0, clOrdId SK-SELL00-1092371682154699 
+2021-02-01 16:23:00,000 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] After leaves qty 0.0, clOrdId SK-SELL00-1092371682154699 
+2021-02-01 16:23:00,001 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] unlocking order lock 
+2021-02-01 16:23:00,002 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1092371682154699 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:23:00,030 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] List of Bids on price 20000.0, [] 
+2021-02-01 16:23:00,042 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1092371797312000 is Removed from matching book? true
+2021-02-01 16:23:00,056 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:23:32,736 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092404548528800, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:23:32,743 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092404548528800, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:23:32,746 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092404568099099, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:23:32,747 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092404568099099, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:23:32,748 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:23:32,751 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1092404548528800, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:23:32,752 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:23:32,753 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:23:32,754 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:23:32,755 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1092404568099099, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:23:32,757 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1092404568099099, 10.0
+2021-02-01 16:23:32,758 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1092404568099099, 10.0
+2021-02-01 16:23:32,759 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:23:32,760 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:23:32,761 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092404548528800, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:23:32,762 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092404548528800, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:23:32,763 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092404584831800, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:23:32,764 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092404584831800, side SELL, price 20000.0, qty 10.0, order id 4 
+2021-02-01 16:23:32,763 ERROR c.d.m.e.FXOrderBook [pool-2-thread-3] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-SELL00-1092404548528800', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:23:32,765 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092404568099099, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:23:32,765 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:23:32,765 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092404568099099, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:23:32,766 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1092404548528800, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:23:32,766 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092404588147300, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:23:32,767 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] before loop SK-SELL00-1092404548528800, 10.0
+2021-02-01 16:23:32,767 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092404588147300, side BUY, price 20000.0, qty 10.0, order id 6 
+2021-02-01 16:23:32,767 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] inside loop --- SK-SELL00-1092404548528800, 10.0
+2021-02-01 16:23:32,769 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Price can't Match as Ask/SELL price 20000.0 is higher than best opposite price 19000.0
+2021-02-01 16:23:32,769 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:23:32,770 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:23:32,771 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1092404584831800, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:23:32,772 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] before loop SK-SELL00-1092404584831800, 10.0
+2021-02-01 16:23:32,773 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] inside loop --- SK-SELL00-1092404584831800, 10.0
+2021-02-01 16:23:32,774 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Price can't Match as Ask/SELL price 20000.0 is higher than best opposite price 19000.0
+2021-02-01 16:23:32,774 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:23:32,775 ERROR c.d.m.e.FXOrderBook [pool-2-thread-5] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-BUY00-1092404568099099', orderId=2, fxSymbol=FXSymbol{name='BTC/USD'}, side=BUY, orderType=LIMIT, ordPx=19000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:23:32,776 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:23:32,776 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-BUY00-1092404568099099, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:23:32,777 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] before loop SK-BUY00-1092404568099099, 10.0
+2021-02-01 16:23:32,778 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] inside loop --- SK-BUY00-1092404568099099, 10.0
+2021-02-01 16:23:32,778 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:23:32,779 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:23:32,779 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:23:32,780 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1092404588147300, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:23:32,781 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] before loop SK-BUY00-1092404588147300, 10.0
+2021-02-01 16:23:32,781 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] inside loop --- SK-BUY00-1092404588147300, 10.0
+2021-02-01 16:23:32,782 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] --- clOrdId SK-BUY00-1092404588147300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1092404548528800', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}, 
+FXOrder{ clOrdId='SK-SELL00-1092404584831800', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:23:32,784 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1092404588147300 with opposite side SELL and clOrdId SK-SELL00-1092404548528800
+2021-02-01 16:23:32,786 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1092404588147300 with opposite side SELL and clOrdId SK-SELL00-1092404548528800
+2021-02-01 16:23:32,787 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] acquired order lock 
+2021-02-01 16:23:32,787 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1092404588147300 leavesQty is 10.0 
+2021-02-01 16:23:32,789 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] Before leaves qty 10.0, clOrdId SK-BUY00-1092404588147300 
+2021-02-01 16:23:32,790 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] After leaves qty 0.0, clOrdId SK-BUY00-1092404588147300 
+2021-02-01 16:23:32,792 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] unlocking order lock 
+2021-02-01 16:23:32,792 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] acquired order lock 
+2021-02-01 16:23:32,793 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1092404548528800 leavesQty is 10.0 
+2021-02-01 16:23:32,793 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] Before leaves qty 10.0, clOrdId SK-SELL00-1092404548528800 
+2021-02-01 16:23:32,794 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] After leaves qty 0.0, clOrdId SK-SELL00-1092404548528800 
+2021-02-01 16:23:32,794 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] unlocking order lock 
+2021-02-01 16:23:32,795 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1092404548528800 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:23:32,796 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] List of Bids on price 20000.0, [] 
+2021-02-01 16:23:32,798 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1092404588147300 is Removed from matching book? true
+2021-02-01 16:23:32,798 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:26:13,229 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092565041995300, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:26:13,234 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092565041995300, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:26:13,237 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092565058868500, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:26:13,239 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092565058868500, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:26:13,239 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:26:13,243 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1092565041995300, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:26:13,243 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:26:13,244 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:26:13,245 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:26:13,246 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1092565058868500, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:26:13,247 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1092565058868500, 10.0
+2021-02-01 16:26:13,248 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1092565058868500, 10.0
+2021-02-01 16:26:13,249 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:26:13,250 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:26:13,252 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092565041995300, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:26:13,253 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092565041995300, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:26:13,254 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1092565074684400, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:26:13,254 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1092565074684400, side SELL, price 20000.0, qty 10.0, order id 4 
+2021-02-01 16:26:13,254 ERROR c.d.m.e.FXOrderBook [pool-2-thread-3] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-SELL00-1092565041995300', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:26:13,255 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092565058868500, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:26:13,255 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:26:13,256 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092565058868500, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:26:13,256 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1092565041995300, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:26:13,257 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1092565077629300, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:26:13,257 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] before loop SK-SELL00-1092565041995300, 10.0
+2021-02-01 16:26:13,257 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1092565077629300, side BUY, price 20000.0, qty 10.0, order id 6 
+2021-02-01 16:26:13,258 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] inside loop --- SK-SELL00-1092565041995300, 10.0
+2021-02-01 16:26:13,259 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Price can't Match as Ask/SELL price 20000.0 is higher than best opposite price 19000.0
+2021-02-01 16:26:13,260 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:26:13,260 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:26:13,261 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1092565074684400, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:26:13,261 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] before loop SK-SELL00-1092565074684400, 10.0
+2021-02-01 16:26:13,261 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] inside loop --- SK-SELL00-1092565074684400, 10.0
+2021-02-01 16:26:13,262 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Price can't Match as Ask/SELL price 20000.0 is higher than best opposite price 19000.0
+2021-02-01 16:26:13,262 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:26:13,264 ERROR c.d.m.e.FXOrderBook [pool-2-thread-5] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-BUY00-1092565058868500', orderId=2, fxSymbol=FXSymbol{name='BTC/USD'}, side=BUY, orderType=LIMIT, ordPx=19000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:26:13,265 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:26:13,265 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-BUY00-1092565058868500, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:26:13,267 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] before loop SK-BUY00-1092565058868500, 10.0
+2021-02-01 16:26:13,267 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] inside loop --- SK-BUY00-1092565058868500, 10.0
+2021-02-01 16:26:13,268 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:26:13,268 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:26:13,269 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:26:13,269 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1092565077629300, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:26:13,269 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] before loop SK-BUY00-1092565077629300, 10.0
+2021-02-01 16:26:13,269 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] inside loop --- SK-BUY00-1092565077629300, 10.0
+2021-02-01 16:26:13,270 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] --- clOrdId SK-BUY00-1092565077629300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1092565041995300', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}, 
+FXOrder{ clOrdId='SK-SELL00-1092565074684400', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:26:13,272 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1092565077629300 with opposite side SELL and clOrdId SK-SELL00-1092565041995300
+2021-02-01 16:26:13,274 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1092565077629300 with opposite side SELL and clOrdId SK-SELL00-1092565041995300
+2021-02-01 16:26:13,275 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] acquired order lock 
+2021-02-01 16:26:13,275 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1092565077629300 leavesQty is 10.0 
+2021-02-01 16:26:13,275 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] Before leaves qty 10.0, clOrdId SK-BUY00-1092565077629300 
+2021-02-01 16:26:13,276 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] After leaves qty 0.0, clOrdId SK-BUY00-1092565077629300 
+2021-02-01 16:26:13,277 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] unlocking order lock 
+2021-02-01 16:26:13,279 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] acquired order lock 
+2021-02-01 16:26:13,279 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1092565041995300 leavesQty is 10.0 
+2021-02-01 16:26:13,280 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] Before leaves qty 10.0, clOrdId SK-SELL00-1092565041995300 
+2021-02-01 16:26:13,280 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] After leaves qty 0.0, clOrdId SK-SELL00-1092565041995300 
+2021-02-01 16:26:13,280 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-1] unlocking order lock 
+2021-02-01 16:26:13,280 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1092565041995300 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:26:13,281 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] List of Bids on price 20000.0, [] 
+2021-02-01 16:26:13,282 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1092565077629300 is Removed from matching book? true
+2021-02-01 16:26:13,283 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:37:44,982 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093256791097400, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:37:44,989 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093256791097400, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:37:44,993 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093256813225900, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:37:44,995 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093256813225900, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:37:44,994 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:44,997 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1093256791097400, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:37:44,998 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:37:44,999 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,000 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,002 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093256813225900, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,003 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1093256813225900, 10.0
+2021-02-01 16:37:45,004 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256813225900, 10.0
+2021-02-01 16:37:45,005 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:37:45,006 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,045 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093256791097400, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:37:45,045 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093256791097400, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:37:45,046 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093256868339499, side SELL, px 19000.0, qty 10.0
+2021-02-01 16:37:45,046 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093256868339499, side SELL, price 19000.0, qty 10.0, order id 4 
+2021-02-01 16:37:45,047 ERROR c.d.m.e.FXOrderBook [pool-2-thread-3] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-SELL00-1093256791097400', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:37:45,048 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,048 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1093256791097400, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,049 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] before loop SK-SELL00-1093256791097400, 10.0
+2021-02-01 16:37:45,049 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] inside loop --- SK-SELL00-1093256791097400, 10.0
+2021-02-01 16:37:45,050 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Price can't Match as Ask/SELL price 20000.0 is higher than best opposite price 19000.0
+2021-02-01 16:37:45,051 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,051 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,052 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1093256868339499, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,053 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] before loop SK-SELL00-1093256868339499, 10.0
+2021-02-01 16:37:45,053 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] inside loop --- SK-SELL00-1093256868339499, 10.0
+2021-02-01 16:37:45,054 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] --- clOrdId SK-SELL00-1093256868339499, Opposite Orders [
+FXOrder{ clOrdId='SK-BUY00-1093256813225900', orderId=2, fxSymbol=FXSymbol{name='BTC/USD'}, side=BUY, orderType=LIMIT, ordPx=19000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:37:45,055 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Match qty 10.0 for side SELL and clOrdId SK-SELL00-1093256868339499 with opposite side BUY and clOrdId SK-BUY00-1093256813225900
+2021-02-01 16:37:45,057 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Match price 19000.0 for side SELL and clOrdId SK-SELL00-1093256868339499 with opposite side BUY and clOrdId SK-BUY00-1093256813225900
+2021-02-01 16:37:45,058 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] acquired order lock 
+2021-02-01 16:37:45,058 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] executing execId,fillPx,fillQty=[1,19000.0,10.0] for clOrdId SK-SELL00-1093256868339499 leavesQty is 10.0 
+2021-02-01 16:37:45,059 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] Before leaves qty 10.0, clOrdId SK-SELL00-1093256868339499 
+2021-02-01 16:37:45,060 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] After leaves qty 0.0, clOrdId SK-SELL00-1093256868339499 
+2021-02-01 16:37:45,061 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] unlocking order lock 
+2021-02-01 16:37:45,062 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] acquired order lock 
+2021-02-01 16:37:45,063 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] executing execId,fillPx,fillQty=[2,19000.0,10.0] for clOrdId SK-BUY00-1093256813225900 leavesQty is 10.0 
+2021-02-01 16:37:45,063 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] Before leaves qty 10.0, clOrdId SK-BUY00-1093256813225900 
+2021-02-01 16:37:45,064 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] After leaves qty 0.0, clOrdId SK-BUY00-1093256813225900 
+2021-02-01 16:37:45,064 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-4] unlocking order lock 
+2021-02-01 16:37:45,065 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-BUY00-1093256813225900 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:37:45,066 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] List of Asks on price 19000.0, [] 
+2021-02-01 16:37:45,067 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1093256868339499 is Removed from matching book? true
+2021-02-01 16:37:45,068 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,098 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093256813225900, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:37:45,098 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093256813225900, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:37:45,099 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093256921200300, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:37:45,100 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093256921200300, side BUY, price 20000.0, qty 10.0, order id 6 
+2021-02-01 16:37:45,099 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,101 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-BUY00-1093256813225900, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,101 INFO c.d.m.e.FXOrderBook [pool-2-thread-5] No Opposite Order Exists for side = BUY
+2021-02-01 16:37:45,101 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,102 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,102 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1093256921200300, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,103 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = BUY
+2021-02-01 16:37:45,103 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,160 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093256791097400, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:37:45,161 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093256791097400, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:37:45,161 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093256868339499, side SELL, px 19000.0, qty 10.0
+2021-02-01 16:37:45,161 ERROR c.d.m.e.FXOrderBook [pool-2-thread-2] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-SELL00-1093256791097400', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:37:45,162 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093256868339499, side SELL, price 19000.0, qty 10.0, order id 4 
+2021-02-01 16:37:45,162 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,163 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093256983607000, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:37:45,163 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-SELL00-1093256791097400, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,163 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093256983607000, side SELL, price 20000.0, qty 10.0, order id 9 
+2021-02-01 16:37:45,164 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-SELL00-1093256791097400, 10.0
+2021-02-01 16:37:45,164 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093256813225900, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:37:45,165 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-SELL00-1093256791097400, 10.0
+2021-02-01 16:37:45,165 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093256813225900, side BUY, price 19000.0, qty 10.0, order id 2 
+2021-02-01 16:37:45,166 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-SELL00-1093256791097400, Opposite Orders [
+FXOrder{ clOrdId='SK-BUY00-1093256921200300', orderId=6, fxSymbol=FXSymbol{name='BTC/USD'}, side=BUY, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:37:45,166 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093256921200300, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:37:45,167 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 10.0 for side SELL and clOrdId SK-SELL00-1093256791097400 with opposite side BUY and clOrdId SK-BUY00-1093256921200300
+2021-02-01 16:37:45,167 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093256921200300, side BUY, price 20000.0, qty 10.0, order id 6 
+2021-02-01 16:37:45,167 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match price 20000.0 for side SELL and clOrdId SK-SELL00-1093256791097400 with opposite side BUY and clOrdId SK-BUY00-1093256921200300
+2021-02-01 16:37:45,168 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093256987874300, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:37:45,168 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:37:45,169 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093256987874300, side BUY, price 20000.0, qty 10.0, order id 12 
+2021-02-01 16:37:45,169 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[3,20000.0,10.0] for clOrdId SK-SELL00-1093256791097400 leavesQty is 10.0 
+2021-02-01 16:37:45,170 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-SELL00-1093256791097400 
+2021-02-01 16:37:45,171 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-SELL00-1093256791097400 
+2021-02-01 16:37:45,171 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:37:45,172 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:37:45,172 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[4,20000.0,10.0] for clOrdId SK-BUY00-1093256921200300 leavesQty is 10.0 
+2021-02-01 16:37:45,173 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-BUY00-1093256921200300 
+2021-02-01 16:37:45,174 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-BUY00-1093256921200300 
+2021-02-01 16:37:45,174 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:37:45,175 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093256921200300 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:37:45,175 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] List of Asks on price 20000.0, [] 
+2021-02-01 16:37:45,176 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-SELL00-1093256791097400 is Removed from matching book? true
+2021-02-01 16:37:45,176 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,177 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,177 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1093256868339499, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,178 INFO c.d.m.e.FXOrderBook [pool-2-thread-3] No Opposite Order Exists for side = SELL
+2021-02-01 16:37:45,178 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,179 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,179 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1093256983607000, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,180 INFO c.d.m.e.FXOrderBook [pool-2-thread-4] No Opposite Order Exists for side = SELL
+2021-02-01 16:37:45,180 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,181 ERROR c.d.m.e.FXOrderBook [pool-2-thread-5] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-BUY00-1093256813225900', orderId=2, fxSymbol=FXSymbol{name='BTC/USD'}, side=BUY, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {2=Trade{orderId=2, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=BUY, tradeId=2, counterClOrdIdId=SK-SELL00-1093256868339499}}}
+2021-02-01 16:37:45,182 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,182 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-BUY00-1093256813225900, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,183 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] before loop SK-BUY00-1093256813225900, 0.0
+2021-02-01 16:37:45,183 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,184 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,185 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1093256921200300, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,185 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] before loop SK-BUY00-1093256921200300, 0.0
+2021-02-01 16:37:45,186 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:37:45,187 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:37:45,187 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093256987874300, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:37:45,188 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,188 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,189 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,190 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,190 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,191 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,192 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,192 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,192 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,193 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,193 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,194 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,194 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,195 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,195 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,195 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,196 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,196 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,196 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,197 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,197 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,198 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,198 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,199 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,200 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,200 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,202 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,202 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,203 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,203 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,203 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,204 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,204 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,204 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,205 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,205 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,206 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,206 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,206 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,207 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,207 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,208 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,208 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,209 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,210 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,210 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,211 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,211 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,211 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,212 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,212 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,213 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,213 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,214 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,214 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,215 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,215 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,215 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,216 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,217 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,217 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,217 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,218 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,218 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,219 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,219 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,220 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,220 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,220 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,221 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,222 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,222 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,223 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,223 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,224 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,224 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,225 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,225 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,225 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,226 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,226 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,227 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,227 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,228 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,228 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,228 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,229 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,229 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,230 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,230 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,231 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:37:45,232 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 0.0 for side BUY and clOrdId SK-BUY00-1093256987874300 with opposite side SELL and clOrdId SK-SELL00-1093256868339499
+2021-02-01 16:37:45,232 WARN c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty should be larger than 0, no matching found
+2021-02-01 16:37:45,233 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093256987874300, 10.0
+2021-02-01 16:37:45,233 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093256987874300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093256868339499', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=19000.0, avgPx=1900.0, lastPrice=19000.0, ordQty=10.0, cumQty=10.0, leavesQty=0.0, lastQty=10.0, currency='USD', isOpen=false,
+ Trade History {1=Trade{orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, tradePrice=19000.0, tradeQty=10.0, tradeSide=SELL, tradeId=1, counterClOrdIdId=SK-BUY00-1093256813225900}}}]
+2021-02-01 16:39:54,014 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093385828701300, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:39:54,020 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093385828701300, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:39:54,024 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093385845471200, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:39:54,025 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093385845471200, side BUY, price 20000.0, qty 10.0, order id 2 
+2021-02-01 16:39:54,026 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:39:54,029 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1093385828701300, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:39:54,030 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:39:54,031 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:39:54,032 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:39:54,033 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093385845471200, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:39:54,034 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1093385845471200, 10.0
+2021-02-01 16:39:54,035 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093385845471200, 10.0
+2021-02-01 16:39:54,037 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093385845471200, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093385828701300', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:39:54,039 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1093385845471200 with opposite side SELL and clOrdId SK-SELL00-1093385828701300
+2021-02-01 16:39:54,041 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1093385845471200 with opposite side SELL and clOrdId SK-SELL00-1093385828701300
+2021-02-01 16:39:54,042 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:39:54,042 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1093385845471200 leavesQty is 10.0 
+2021-02-01 16:39:54,043 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-BUY00-1093385845471200 
+2021-02-01 16:39:54,044 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-BUY00-1093385845471200 
+2021-02-01 16:39:54,046 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:39:54,047 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:39:54,047 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1093385828701300 leavesQty is 10.0 
+2021-02-01 16:39:54,048 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-SELL00-1093385828701300 
+2021-02-01 16:39:54,048 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-SELL00-1093385828701300 
+2021-02-01 16:39:54,050 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:39:54,051 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-SELL00-1093385828701300 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:39:54,052 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] List of Bids on price 20000.0, [] 
+2021-02-01 16:39:54,054 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093385845471200 is Removed from matching book? true
+2021-02-01 16:39:54,055 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:39:54,089 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093385828701300, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:39:54,090 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093385828701300, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:39:54,091 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093385912837600, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:39:54,092 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093385912837600, side SELL, price 20000.0, qty 10.0, order id 4 
+2021-02-01 16:39:54,091 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:39:54,093 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093385845471200, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:39:54,093 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1093385828701300, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:39:54,093 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093385845471200, side BUY, price 20000.0, qty 10.0, order id 2 
+2021-02-01 16:39:54,094 INFO c.d.m.e.FXOrderBook [pool-2-thread-3] No Opposite Order Exists for side = SELL
+2021-02-01 16:39:54,094 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093385916190800, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:39:54,094 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:39:54,095 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093385916190800, side BUY, price 19000.0, qty 10.0, order id 6 
+2021-02-01 16:39:54,095 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:39:54,097 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1093385912837600, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:39:54,098 INFO c.d.m.e.FXOrderBook [pool-2-thread-4] No Opposite Order Exists for side = SELL
+2021-02-01 16:39:54,098 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:39:54,100 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:39:54,101 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-BUY00-1093385845471200, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:39:54,102 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] before loop SK-BUY00-1093385845471200, 0.0
+2021-02-01 16:39:54,102 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:39:54,104 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:39:54,104 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1093385916190800, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:39:54,105 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] before loop SK-BUY00-1093385916190800, 10.0
+2021-02-01 16:39:54,106 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] inside loop --- SK-BUY00-1093385916190800, 10.0
+2021-02-01 16:39:54,107 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:39:54,108 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:40:54,842 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093446652625600, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:40:54,849 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093446652625600, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:40:54,853 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093446674544100, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:40:54,854 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093446674544100, side BUY, price 20000.0, qty 10.0, order id 2 
+2021-02-01 16:40:54,855 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:40:54,858 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1093446652625600, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:40:54,859 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:40:54,860 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:40:54,861 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:40:54,862 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093446674544100, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:40:54,863 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1093446674544100, 10.0
+2021-02-01 16:40:54,865 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093446674544100, 10.0
+2021-02-01 16:40:54,867 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093446674544100, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093446652625600', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:40:54,869 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1093446674544100 with opposite side SELL and clOrdId SK-SELL00-1093446652625600
+2021-02-01 16:40:54,871 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1093446674544100 with opposite side SELL and clOrdId SK-SELL00-1093446652625600
+2021-02-01 16:40:54,873 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:40:54,874 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1093446674544100 leavesQty is 10.0 
+2021-02-01 16:40:54,875 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-BUY00-1093446674544100 
+2021-02-01 16:40:54,876 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-BUY00-1093446674544100 
+2021-02-01 16:40:54,878 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:40:54,878 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:40:54,879 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1093446652625600 leavesQty is 10.0 
+2021-02-01 16:40:54,880 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-SELL00-1093446652625600 
+2021-02-01 16:40:54,880 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-SELL00-1093446652625600 
+2021-02-01 16:40:54,881 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:40:54,882 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-SELL00-1093446652625600 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:40:54,885 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] List of Bids on price 20000.0, [] 
+2021-02-01 16:40:54,886 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093446674544100 is Removed from matching book? true
+2021-02-01 16:40:54,887 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:40:54,972 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093446652625600, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:40:54,972 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093446652625600, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:40:54,974 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093446794836900, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:40:54,974 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093446794836900, side SELL, price 20000.0, qty 10.0, order id 4 
+2021-02-01 16:40:54,974 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:40:54,975 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093446674544100, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:40:54,976 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1093446652625600, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:40:54,976 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093446674544100, side BUY, price 20000.0, qty 10.0, order id 2 
+2021-02-01 16:40:54,977 INFO c.d.m.e.FXOrderBook [pool-2-thread-3] No Opposite Order Exists for side = SELL
+2021-02-01 16:40:54,978 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093446798662800, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:40:54,978 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:40:54,979 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093446798662800, side BUY, price 19000.0, qty 10.0, order id 6 
+2021-02-01 16:40:54,979 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:40:54,981 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-SELL00-1093446794836900, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:40:54,982 INFO c.d.m.e.FXOrderBook [pool-2-thread-4] No Opposite Order Exists for side = SELL
+2021-02-01 16:40:54,982 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:40:54,983 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:40:54,984 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-BUY00-1093446674544100, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:40:54,984 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] before loop SK-BUY00-1093446674544100, 0.0
+2021-02-01 16:40:54,985 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:40:54,986 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:40:54,986 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-BUY00-1093446798662800, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:40:54,987 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] before loop SK-BUY00-1093446798662800, 10.0
+2021-02-01 16:40:54,987 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] inside loop --- SK-BUY00-1093446798662800, 10.0
+2021-02-01 16:40:54,989 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:40:54,990 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:43:19,565 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093591377850000, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:43:19,570 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093591377850000, side SELL, price 20000.0, qty 10.0, order id 1 
+2021-02-01 16:43:19,573 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093591394966300, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:43:19,575 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093591394966300, side BUY, price 20000.0, qty 10.0, order id 2 
+2021-02-01 16:43:19,575 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:43:19,578 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1093591377850000, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:43:19,579 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:43:19,580 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:43:19,581 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:43:19,582 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093591394966300, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:43:19,583 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1093591394966300, 10.0
+2021-02-01 16:43:19,584 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093591394966300, 10.0
+2021-02-01 16:43:19,585 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] --- clOrdId SK-BUY00-1093591394966300, Opposite Orders [
+FXOrder{ clOrdId='SK-SELL00-1093591377850000', orderId=1, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}]
+2021-02-01 16:43:19,586 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match qty 10.0 for side BUY and clOrdId SK-BUY00-1093591394966300 with opposite side SELL and clOrdId SK-SELL00-1093591377850000
+2021-02-01 16:43:19,588 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Match price 20000.0 for side BUY and clOrdId SK-BUY00-1093591394966300 with opposite side SELL and clOrdId SK-SELL00-1093591377850000
+2021-02-01 16:43:19,589 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:43:19,589 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[1,20000.0,10.0] for clOrdId SK-BUY00-1093591394966300 leavesQty is 10.0 
+2021-02-01 16:43:19,590 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-BUY00-1093591394966300 
+2021-02-01 16:43:19,591 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-BUY00-1093591394966300 
+2021-02-01 16:43:19,593 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:43:19,593 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] acquired order lock 
+2021-02-01 16:43:19,594 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] executing execId,fillPx,fillQty=[2,20000.0,10.0] for clOrdId SK-SELL00-1093591377850000 leavesQty is 10.0 
+2021-02-01 16:43:19,595 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] Before leaves qty 10.0, clOrdId SK-SELL00-1093591377850000 
+2021-02-01 16:43:19,596 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] After leaves qty 0.0, clOrdId SK-SELL00-1093591377850000 
+2021-02-01 16:43:19,597 DEBUG c.d.m.e.o.FXOrder [pool-2-thread-2] unlocking order lock 
+2021-02-01 16:43:19,598 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-SELL00-1093591377850000 is removed from matching book as bestOppositeOrder? true
+2021-02-01 16:43:19,600 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] List of Bids on price 20000.0, [] 
+2021-02-01 16:43:19,601 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093591394966300 is Removed from matching book? true
+2021-02-01 16:43:19,602 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Releasing Transaction Lock for matching
+2021-02-01 16:43:19,692 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093591514920900, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:43:19,693 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093591514920900, side SELL, price 20000.0, qty 10.0, order id 3 
+2021-02-01 16:43:19,694 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093591517171199, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:43:19,695 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093591517171199, side BUY, price 19000.0, qty 10.0, order id 4 
+2021-02-01 16:43:19,694 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:43:19,696 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] SK-SELL00-1093591514920900, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:43:19,697 INFO c.d.m.e.FXOrderBook [pool-2-thread-3] No Opposite Order Exists for side = SELL
+2021-02-01 16:43:19,697 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-3] Releasing Transaction Lock for matching
+2021-02-01 16:43:19,698 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:43:19,699 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] SK-BUY00-1093591517171199, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:43:19,700 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] before loop SK-BUY00-1093591517171199, 10.0
+2021-02-01 16:43:19,700 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] inside loop --- SK-BUY00-1093591517171199, 10.0
+2021-02-01 16:43:19,701 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Price can't Match as Bid/BUY price 19000.0 is lower than best opposite price 20000.0
+2021-02-01 16:43:19,702 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-4] Releasing Transaction Lock for matching
+2021-02-01 16:43:19,798 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093591514920900, side SELL, px 20000.0, qty 10.0
+2021-02-01 16:43:19,799 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093591514920900, side SELL, price 20000.0, qty 10.0, order id 3 
+2021-02-01 16:43:19,799 INFO c.d.m.c.FXClientSell [main] Sending Client(S) order id SK-SELL00-1093591620905800, side SELL, px 19000.0, qty 10.0
+2021-02-01 16:43:19,800 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-SELL00-1093591620905800, side SELL, price 19000.0, qty 10.0, order id 6 
+2021-02-01 16:43:19,800 ERROR c.d.m.e.FXOrderBook [pool-2-thread-5] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-SELL00-1093591514920900', orderId=3, fxSymbol=FXSymbol{name='BTC/USD'}, side=SELL, orderType=LIMIT, ordPx=20000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:43:19,814 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093591517171199, side BUY, px 19000.0, qty 10.0
+2021-02-01 16:43:19,815 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:43:19,815 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093591517171199, side BUY, price 19000.0, qty 10.0, order id 4 
+2021-02-01 16:43:19,816 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] SK-SELL00-1093591514920900, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:43:19,816 INFO c.d.m.c.FXClientBuy [main] Sending client(B) order id SK-BUY00-1093591637341700, side BUY, px 20000.0, qty 10.0
+2021-02-01 16:43:19,817 INFO c.d.m.e.FXOrderBook [pool-2-thread-5] No Opposite Order Exists for side = SELL
+2021-02-01 16:43:19,817 INFO c.d.m.e.FXMatchingEngine [main] Received to add clOrdId SK-BUY00-1093591637341700, side BUY, price 20000.0, qty 10.0, order id 8 
+2021-02-01 16:43:19,818 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-5] Releasing Transaction Lock for matching
+2021-02-01 16:43:19,819 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:43:19,819 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] SK-SELL00-1093591620905800, side SELL order received... will try to match with opposite side for best price.
+2021-02-01 16:43:19,820 INFO c.d.m.e.FXOrderBook [pool-2-thread-1] No Opposite Order Exists for side = SELL
+2021-02-01 16:43:19,820 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-1] Releasing Transaction Lock for matching
+2021-02-01 16:43:19,821 ERROR c.d.m.e.FXOrderBook [pool-2-thread-2] Duplicate Ask order received 
+FXOrder{ clOrdId='SK-BUY00-1093591517171199', orderId=4, fxSymbol=FXSymbol{name='BTC/USD'}, side=BUY, orderType=LIMIT, ordPx=19000.0, avgPx=0.0, lastPrice=0.0, ordQty=10.0, cumQty=0.0, leavesQty=10.0, lastQty=0.0, currency='USD', isOpen=true,
+ Trade History {}}
+2021-02-01 16:43:19,821 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] Acquiring Transaction Lock for matching on OrderBook of symbol = FXSymbol{name='BTC/USD'}
+2021-02-01 16:43:19,822 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] SK-BUY00-1093591517171199, side BUY order received... will try to match with opposite side for best price.
+2021-02-01 16:43:19,823 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] before loop SK-BUY00-1093591517171199, 10.0
+2021-02-01 16:43:19,824 DEBUG c.d.m.e.FXOrderBook [pool-2-thread-2] inside loop --- SK-BUY00-1093591517171199, 10.0
