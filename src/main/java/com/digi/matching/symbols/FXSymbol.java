@@ -16,6 +16,7 @@ import static com.digi.matching.util.StringUtil.BTC_USD;
  */
 public class FXSymbol implements Symbol { /// when extended with more attributes, make it immutable
     private static final Logger logger = LogManager.getLogger(FXSymbol.class);
+    private static final long serialVersionUID = 2405172041950251807L;
 
     private static final Map<String, FXSymbol> fxSymbolMap = new ConcurrentHashMap<>();
 
@@ -39,6 +40,7 @@ public class FXSymbol implements Symbol { /// when extended with more attributes
         // list is for illustration only, Will read it from data source
         symbolFile.put(BTC_USD, 2000.0d);
         for (Map.Entry<String, Double> syEntry : symbolFile.entrySet()) {
+            logger.info(" Loading the FXSymbol in cache {} ", syEntry);
             fxSymbolMap.putIfAbsent(syEntry.getKey(), FXSymbol.valueOf(syEntry.getKey()).setOpeningPx(syEntry.getValue()) );
         }
     }

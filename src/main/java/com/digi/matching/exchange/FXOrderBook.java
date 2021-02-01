@@ -1,7 +1,6 @@
 package com.digi.matching.exchange;
 
 import com.digi.matching.exchange.order.FXOrder;
-import com.digi.matching.exchange.order.Trade;
 import com.digi.matching.symbols.FXSymbol;
 import com.digi.matching.types.Side;
 import org.apache.logging.log4j.LogManager;
@@ -30,17 +29,15 @@ public class FXOrderBook implements OrderBook, Serializable {
     private static final AtomicLong currentTradeId = new AtomicLong();
 
 
-    private final ReadWriteLock rrwLock = new ReentrantReadWriteLock();
-    public  final Lock readLock = rrwLock.readLock();
-    public  final Lock writeLock = rrwLock.writeLock();
+    private final transient ReadWriteLock rrwLock = new ReentrantReadWriteLock();
+    public  final transient Lock readLock = rrwLock.readLock();
+    public  final transient Lock writeLock = rrwLock.writeLock();
 
     private final FXSymbol fxSymbol;
     private final SortedMap<Double,List<FXOrder>> fxBidOrderSortedMap = new ConcurrentSkipListMap<>();
     private final SortedMap<Double,List<FXOrder>> fxAskOrderSortedMap = new ConcurrentSkipListMap<>();
 
     private final Map<Long,FXOrder> orderHistory = new LinkedHashMap<>();
-
-    private volatile double lastExecutedPx = 0.0d; //To be used later for opening price
 
     private FXOrderBook( FXSymbol fxSymbol ) {
         this.fxSymbol = fxSymbol;
@@ -98,10 +95,10 @@ public class FXOrderBook implements OrderBook, Serializable {
             while ( fxOrder.getLeavesQty() > 0 && null != bestOppositeOrderList && !bestOppositeOrderList.isEmpty() ) {
 
                 logger.debug("inside loop --- {}, {}" , fxOrder::getClientOrderId, fxOrder::getLeavesQty);
-                if( fxOrder.getLeavesQty() <= 0 || fxOrder.isClosed() || bestOppositeOrderList.size() == 0 ) {
+                if( fxOrder.getLeavesQty() <= 0 || fxOrder.isClosed() || bestOppositeOrderList.isEmpty() ) {
                     break;
                 }
-                double bestOppositePrice = Double.NaN;
+                double bestOppositePrice;
                 if( side == BUY) {
                     bestOppositePrice = fxOrderBook.getBestAskPrice();
                     if( fxOrder.getOrdPx() < bestOppositePrice ) {
@@ -125,7 +122,6 @@ public class FXOrderBook implements OrderBook, Serializable {
 
                 ListIterator<FXOrder> listIterator = bestOppositeOrderList.listIterator();
                 while (listIterator.hasNext()) { //Iterate based on receiving sequence
-                    //                    FXOrder bestOppositeOrder : bestOppositeOrderList;
                     FXOrder bestOppositeOrder = listIterator.next();
                     if(fxOrder.getOrderType() == MARKET && bestOppositeOrder.getOrderType() == MARKET) {
                         logger.debug(() -> "Matching can't be done as BUY and SELL both orders are MARKET Order");
@@ -171,20 +167,20 @@ public class FXOrderBook implements OrderBook, Serializable {
                         listIterator.remove();
                         List<FXOrder> finalList2 = bestOppositeOrderList;
                         logger.debug(()-> bestOppositeOrder.getClientOrderId() + " is removed from matching book as bestOppositeOrder? " +
-                                !finalList2.contains(bestOppositeOrder));;
+                                !finalList2.contains(bestOppositeOrder));
                     }
                     if (bestOppositeOrder.getLeavesQty() < 0) {
                         logger.info(()->"Order over executed [Check fill logic if happened ] fxOrder = " + bestOppositeOrder);
                         listIterator.remove();
                         List<FXOrder> finalList2 = bestOppositeOrderList;
                         logger.debug(()-> "Overfilled however " + bestOppositeOrder.getClientOrderId() +
-                                " is removed from matching book as bestOppositeOrder " + !finalList2.contains(bestOppositeOrder));;
+                                " is removed from matching book as bestOppositeOrder " + !finalList2.contains(bestOppositeOrder));
                     }
                     if (fxOrder.getLeavesQty() == 0) {
                         boolean isRemoved = fxOrderBook.removeOrder(fxOrder);
                         List<FXOrder> finalList2 = bestOppositeOrderList;
                         logger.debug(()-> fxOrder.getClientOrderId() + " is Removed from matching book? " +
-                                !finalList2.contains(bestOppositeOrder));;
+                                !finalList2.contains(bestOppositeOrder));
                         return isRemoved;
                     }
                     if (fxOrder.getLeavesQty() < 0) {
@@ -192,7 +188,7 @@ public class FXOrderBook implements OrderBook, Serializable {
                         boolean isRemoved = fxOrderBook.removeOrder(fxOrder);
                         List<FXOrder> finalList2 = bestOppositeOrderList;
                         logger.debug(()-> "Overfilled but is Removed bestOppositeOrder " +
-                                !finalList2.contains(bestOppositeOrder));;
+                                !finalList2.contains(bestOppositeOrder));
                         return isRemoved;
                     }
 

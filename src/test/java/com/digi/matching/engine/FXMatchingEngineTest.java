@@ -39,6 +39,7 @@ class FXMatchingEngineTest {
     public void testSimpleBuyAndSell() throws InterruptedException {
         fxClientSell.createAndSubmitOrder(1, 20000.0d, 10, LIMIT);
         fxClientBuy.createAndSubmitOrder(1, 20000.0d, 10, LIMIT);
+
         Thread.sleep(50);
 
         List<FXOrder> fxClientSellOrdList = fxClientSell.getClientOrders();
