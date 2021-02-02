@@ -50,8 +50,8 @@ class FXMatchingEngineTest {
         System.out.println(sellFXOrder);
         System.out.println(buyFXOrder);
 
-        assertEquals(sellFXOrder.getTradeCount(), 1);
-        assertEquals(buyFXOrder.getTradeCount(), 1);
+        assertEquals( 1, sellFXOrder.getTradeCount());
+        assertEquals(1, buyFXOrder.getTradeCount());
 
         List<Trade> sellTrades = new ArrayList<>(sellFXOrder.getTrades());
         List<Trade> buyTrades = new ArrayList<>(buyFXOrder.getTrades());
@@ -81,8 +81,8 @@ class FXMatchingEngineTest {
         System.out.println(sellFXOrder);
         System.out.println(buyFXOrder);
 
-        assertEquals(sellFXOrder.getTradeCount(), 0);
-        assertEquals(buyFXOrder.getTradeCount(), 0);
+        assertEquals(0, sellFXOrder.getTradeCount());
+        assertEquals(0, buyFXOrder.getTradeCount());
 
         Thread.sleep(50);
         fxClientSell.createAndSubmitOrder(1, 19000.0d, 10, LIMIT);//Clearing book

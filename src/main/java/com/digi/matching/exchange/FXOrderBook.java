@@ -69,6 +69,36 @@ public class FXOrderBook implements OrderBook, Serializable {
         return false;
     }
 
+    private List<FXOrder> getBestOppositeOrderList(Side ordSide, FXOrderBook fxOrderBook) {
+        List<FXOrder> bestOppositeOrderList = null;
+        if( ordSide == BUY) {
+            bestOppositeOrderList = fxOrderBook.getBestAsk();
+        } else {
+            bestOppositeOrderList = fxOrderBook.getBestBid();
+        }
+        return bestOppositeOrderList;
+    }
+
+    private double getBestOppositePrice(FXOrder fxOrder, Side ordSide, FXOrderBook fxOrderBook) {
+        double bestOppositePrice = Double.NaN;
+        if( ordSide == BUY) {
+            bestOppositePrice = fxOrderBook.getBestAskPrice();
+            if( fxOrder.getOrdPx() < bestOppositePrice ) {
+                double finalBestOppositePrice = bestOppositePrice;
+                logger.debug("Price can't Match as Bid/BUY price {} is lower than best opposite price {}",
+                        ()->fxOrder.getOrdPx(), ()-> finalBestOppositePrice);
+            }
+        } else {
+            bestOppositePrice = fxOrderBook.getBestBidPrice();
+            if( fxOrder.getOrdPx() > bestOppositePrice ) {
+                double finalBestOppositePrice = bestOppositePrice;
+                logger.debug("Price can't Match as Ask/SELL price {} is higher than best opposite price {}",
+                        ()->fxOrder.getOrdPx(), ()-> finalBestOppositePrice);
+            }
+        }
+        return bestOppositePrice;
+    }
+
     public boolean processOrder(FXOrder fxOrder) {
         try {
             writeLock.lock();
@@ -77,15 +107,12 @@ public class FXOrderBook implements OrderBook, Serializable {
 
             logger.debug(()->"Acquiring Transaction Lock for matching on OrderBook of symbol = " + fxOrderBook.getSymbol());
 
-            List<FXOrder> bestOppositeOrderList = null;
             Side side = fxOrder.getSide();
             String clOrdId = fxOrder.getClientOrderId();
             logger.debug(()-> clOrdId +", side "+ side + " order received... will try to match with opposite side for best price.");
-            if( side == BUY) {
-                bestOppositeOrderList = fxOrderBook.getBestAsk();
-            } else {
-                bestOppositeOrderList = fxOrderBook.getBestBid();
-            }
+
+            List<FXOrder> bestOppositeOrderList = getBestOppositeOrderList(side, fxOrderBook);
+
             if ( null == bestOppositeOrderList || bestOppositeOrderList.isEmpty() ) {
                 logger.info( ()->"No Opposite Order Exists for side = " + side );
                 return false;
@@ -98,24 +125,8 @@ public class FXOrderBook implements OrderBook, Serializable {
                 if( fxOrder.getLeavesQty() <= 0 || fxOrder.isClosed() || bestOppositeOrderList.isEmpty() ) {
                     break;
                 }
-                double bestOppositePrice;
-                if( side == BUY) {
-                    bestOppositePrice = fxOrderBook.getBestAskPrice();
-                    if( fxOrder.getOrdPx() < bestOppositePrice ) {
-                        double finalBestOppositePrice = bestOppositePrice;
-                        logger.debug("Price can't Match as Bid/BUY price {} is lower than best opposite price {}",
-                                ()->fxOrder.getOrdPx(), ()-> finalBestOppositePrice);
-                        break;
-                    }
-                } else {
-                    bestOppositePrice = fxOrderBook.getBestBidPrice();
-                    if( fxOrder.getOrdPx() > bestOppositePrice ) {
-                        double finalBestOppositePrice = bestOppositePrice;
-                        logger.debug("Price can't Match as Ask/SELL price {} is higher than best opposite price {}",
-                                ()->fxOrder.getOrdPx(), ()-> finalBestOppositePrice);
-                        break;
-                    }
-                }
+                double bestOppositePrice = getBestOppositePrice(fxOrder, side, fxOrderBook);
+                if(Double.isNaN(bestOppositePrice) ) break;
 
                 List<FXOrder> finalList = bestOppositeOrderList;
                 logger.debug( "--- clOrdId {}, Opposite Orders {}" , fxOrder::getClientOrderId, ()-> finalList);
@@ -195,11 +206,7 @@ public class FXOrderBook implements OrderBook, Serializable {
                 }
                 if (fxOrder.getLeavesQty() > 0 && (null == bestOppositeOrderList || bestOppositeOrderList.isEmpty()) ) {
                     logger.debug(()->"Check for the next best price opposite side of order " + fxOrder);
-                    if( fxOrder.getSide() == BUY) {
-                        bestOppositeOrderList = fxOrderBook.getBestAsk();
-                    } else {
-                        bestOppositeOrderList = fxOrderBook.getBestBid();
-                    }
+                    bestOppositeOrderList = getBestOppositeOrderList(side , fxOrderBook);
                     if( null == bestOppositeOrderList || bestOppositeOrderList.isEmpty()) break;
                 }
 
