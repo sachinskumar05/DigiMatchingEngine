@@ -64,11 +64,13 @@ class FXMatchingEngineTest {
         assertEquals(buyTrades.get(0).tradeQty, sellTrades.get(0).tradeQty);
     }
 
+
+
     @Test
     @Order(2)
     public void testSimpleBuyLowAndSellHigh() throws InterruptedException {
 
-        Thread.sleep(50);
+        Thread.sleep(100);
         fxClientSell.createAndSubmitOrder(1, 20000.0d, 10, LIMIT);
         fxClientBuy.createAndSubmitOrder(1, 19000.0d, 10, LIMIT);
         List<FXOrder> fxClientSellOrdList = fxClientSell.getClientOrders();
